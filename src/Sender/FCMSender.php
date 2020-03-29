@@ -55,7 +55,7 @@ class FCMSender extends HTTPSender
                 }
             }
         } else {
-            $request = new Request($to, $options, $notification, $data);
+            $request = new Request($to, $options, $notification, $data, null, $server_key, $sender_id);
             $responseGuzzle = $this->post($request);
 
             $response = new DownstreamResponse($responseGuzzle, $to);
